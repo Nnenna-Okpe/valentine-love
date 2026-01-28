@@ -47,12 +47,12 @@ export default function Home() {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-wrap flex-row items-center gap-1 md:gap-4">
-                  <button className="bg-pink-500 text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-pink-600 transition shadow-lg shadow-pink-500/20">
-                    Browse Templates
+                  <button className="bg-pink-500 text-white px-3 md:px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-pink-600 transition shadow-lg shadow-pink-500/20">
+                    Browse Templated
                     <ChevronRight size={18} />
                   </button>
 
-                  <button className="border border-white/20 text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition flex items-center gap-2">
+                  <button className="border border-white/20 text-white px-3 md:px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition flex items-center gap-2">
                     View Portfolio
                     <Globe size={18} />
                   </button>
