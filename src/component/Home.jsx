@@ -15,10 +15,10 @@ export default function Home() {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] flex items-center justify-center p-4">
-        <div className="relative w-full max-w-7xl">
+      <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] flex items-center justify-center md:p-4">
+        <div className="relative w-screen md:max-w-7xl">
           {/* Main Container */}
-          <div className="relative bg-[#0b0b16]/90 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+          <div className="relative bg-[#0b0b16]/90 backdrop-blur-xl md:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
             {/* Header */}
             <header className="flex items-center justify-between px-6 md:px-10 py-6 border-b border-white/10">
               <div className="flex items-center gap-3">
@@ -46,7 +46,7 @@ export default function Home() {
                 </p>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-wrap items-center gap-4">
+                <div className="flex flex-wrap flex-row items-center gap-1 md:gap-4">
                   <button className="bg-pink-500 text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-pink-600 transition shadow-lg shadow-pink-500/20">
                     Browse Templates
                     <ChevronRight size={18} />
