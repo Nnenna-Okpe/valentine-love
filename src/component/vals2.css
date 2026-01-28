@@ -1,0 +1,126 @@
+.vals2-theme {
+  --midnight: #05051a;
+  --electric-rose: #ff2d75;
+  --gold-glow: #ffcc33;
+  --nebula-purple: #6b21a8;
+
+  font-family: "Poppins", sans-serif;
+  background-color: var(--midnight);
+  color: #f8fafc;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.vals2-theme .font-serif {
+  font-family: "Playfair Display", serif;
+}
+
+/* Starfield Animation */
+.vals2-theme .star-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at center, #0a0a2e 0%, #05051a 100%);
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.vals2-theme .star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle var(--duration) infinite ease-in-out;
+}
+
+/* Floating Lanterns */
+@keyframes floatUp {
+  0% {
+    transform: translateY(110vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-20vh) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+.vals2-theme .lantern {
+  position: absolute;
+  width: 15px;
+  height: 20px;
+  background: var(--gold-glow);
+  filter: blur(2px);
+  border-radius: 4px;
+  box-shadow: 0 0 15px var(--gold-glow);
+  animation: floatUp var(--duration) linear infinite;
+  opacity: 0;
+}
+
+/* Glassmorphism */
+.vals2-theme .glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+.vals2-theme .glass-card:hover {
+  border: 1px solid rgba(255, 45, 117, 0.4);
+  box-shadow: 0 0 40px rgba(255, 45, 117, 0.15);
+}
+
+/* Reveal Animation */
+.vals2-theme .reveal {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.vals2-theme .reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Section Dividers */
+.vals2-theme .glow-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--electric-rose),
+    transparent
+  );
+  width: 100%;
+  opacity: 0.3;
+}
+
+/* Scoped scrollbar */
+.vals2-theme ::-webkit-scrollbar {
+  width: 6px;
+}
+.vals2-theme ::-webkit-scrollbar-track {
+  background: var(--midnight);
+}
+.vals2-theme ::-webkit-scrollbar-thumb {
+  background: var(--electric-rose);
+  border-radius: 10px;
+}

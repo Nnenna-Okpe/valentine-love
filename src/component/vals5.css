@@ -1,0 +1,543 @@
+/* Modern Valentine's Day Website - Scoped Styles for Vals5 */
+
+.vals5-theme {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+  background: #faf9f7;
+  color: #2a2a2a;
+  line-height: 1.6;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Enable smooth scroll only inside Vals5 */
+.vals5-theme {
+  scroll-behavior: smooth;
+}
+
+.vals5-theme .valentine-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: #faf9f7;
+}
+
+.vals5-theme .section-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.vals5-theme .section-container.centered {
+  text-align: center;
+}
+
+/* Header */
+.vals5-theme .valentine-header {
+  text-align: center;
+  padding: 80px 20px 60px;
+  background: #faf9f7;
+  border-bottom: 1px solid #ede9e3;
+}
+
+.vals5-theme .valentine-header h1 {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 8px;
+  color: #2a2a2a;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.vals5-theme .subtitle {
+  font-size: 1rem;
+  color: #8b8480;
+  letter-spacing: 2px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hero Section */
+.vals5-theme .hero-section {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  animation: fadeIn 1s ease-out;
+}
+
+.vals5-theme .photo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.vals5-theme .hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease-out;
+}
+
+.vals5-theme .hero-section:hover .hero-image {
+  transform: scale(1.05);
+}
+
+.vals5-theme .image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to top, rgba(250, 249, 247, 0.95), transparent);
+  pointer-events: none;
+}
+
+/* Message Section */
+.vals5-theme .message-section {
+  padding: 80px 20px;
+  animation: fadeInUp 1s ease-out 0.2s both;
+  background: #faf9f7;
+}
+
+.vals5-theme .message-section .section-container {
+  text-align: center;
+  max-width: 700px;
+}
+
+.vals5-theme .message-section h2 {
+  font-size: 2.5rem;
+  color: #2a2a2a;
+  font-weight: 300;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.vals5-theme .message-text {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #5a5450;
+  margin-bottom: 40px;
+  letter-spacing: 0.3px;
+}
+
+.vals5-theme .signature-text {
+  font-size: 0.95rem;
+  color: #8b8480;
+  margin-top: 30px;
+  letter-spacing: 0.5px;
+}
+
+/* Section Title */
+.vals5-theme h2 {
+  font-size: 2.8rem;
+  color: #2a2a2a;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.vals5-theme .section-subtitle {
+  font-size: 0.95rem;
+  color: #8b8480;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 50px !important;
+}
+
+/* Memory Section */
+.vals5-theme .memory-section {
+  padding: 80px 20px;
+  animation: fadeInUp 1s ease-out 0.3s both;
+  background: #fff;
+  border-top: 1px solid #ede9e3;
+  border-bottom: 1px solid #ede9e3;
+}
+
+.vals5-theme .memory-carousel {
+  background: #faf9f7;
+  padding: 60px 40px;
+  border-radius: 2px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.vals5-theme .memory-nav {
+  background: none;
+  border: none;
+  color: #2a2a2a;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.vals5-theme .memory-nav svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.5;
+}
+
+.vals5-theme .memory-nav:hover {
+  color: #b5a495;
+  transform: scale(1.1);
+}
+
+.vals5-theme .memory-content {
+  flex: 1;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.vals5-theme .memory-item-active {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.vals5-theme .memory-item-active h3 {
+  font-size: 2rem;
+  color: #2a2a2a;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.vals5-theme .memory-date {
+  color: #8b8480;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.vals5-theme .memory-description {
+  font-size: 1rem;
+  color: #5a5450;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
+
+.vals5-theme .memory-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.vals5-theme .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d4cfc8;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+}
+
+.vals5-theme .dot:hover {
+  background: #8b8480;
+}
+
+.vals5-theme .dot.active {
+  background: #2a2a2a;
+  width: 28px;
+  border-radius: 5px;
+}
+
+/* Reasons Section */
+.vals5-theme .reasons-section {
+  padding: 80px 20px;
+  animation: fadeInUp 1s ease-out 0.4s both;
+  background: #faf9f7;
+}
+
+.vals5-theme .reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.vals5-theme .reason-item {
+  padding: 30px 0;
+  border-bottom: 1px solid #ede9e3;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.vals5-theme .reason-item:last-child {
+  border-bottom: none;
+}
+
+.vals5-theme .reason-item:hover p {
+  color: #2a2a2a;
+}
+
+.vals5-theme .reason-item p {
+  font-size: 1.05rem;
+  color: #5a5450;
+  line-height: 1.7;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+/* Love Meter Section */
+.vals5-theme .love-meter-section {
+  padding: 80px 20px;
+  animation: fadeInUp 1s ease-out 0.5s both;
+  background: #fff;
+  border-top: 1px solid #ede9e3;
+  border-bottom: 1px solid #ede9e3;
+}
+
+.vals5-theme .love-meter-bar {
+  position: relative;
+  height: 3px;
+  background: #ede9e3;
+  margin: 40px 0;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vals5-theme .love-meter-fill {
+  height: 100%;
+  background: #2a2a2a;
+  width: 100%;
+  animation: fillMeter 2s ease-in-out infinite;
+}
+
+@keyframes fillMeter {
+  0%,
+  100% {
+    width: 100%;
+  }
+  50% {
+    width: 70%;
+  }
+}
+
+.vals5-theme .meter-text {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #2a2a2a;
+  letter-spacing: 2px;
+  margin-top: 30px;
+}
+
+/* Closing Section */
+.vals5-theme .closing-section {
+  padding: 80px 20px;
+  animation: fadeInUp 1s ease-out 0.6s both;
+  background: #faf9f7;
+}
+
+.vals5-theme .closing-section .section-container h2 {
+  margin-bottom: 20px;
+}
+
+.vals5-theme .closing-section .section-container p {
+  font-size: 1.1rem;
+  color: #5a5450;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
+
+/* Footer */
+.vals5-theme .valentine-footer {
+  padding: 60px 20px;
+  background: #2a2a2a;
+  color: #faf9f7;
+  text-align: center;
+  border-top: 1px solid #404040;
+}
+
+.vals5-theme .valentine-footer p {
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.vals5-theme .footer-symbol {
+  font-size: 1.5rem;
+  animation: pulse-symbol 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-symbol {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vals5-theme .valentine-header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+  }
+
+  .vals5-theme h2 {
+    font-size: 2rem;
+  }
+
+  .vals5-theme .hero-section {
+    height: 350px;
+  }
+
+  .vals5-theme .message-section,
+  .vals5-theme .memory-section,
+  .vals5-theme .reasons-section,
+  .vals5-theme .love-meter-section,
+  .vals5-theme .closing-section {
+    padding: 60px 20px;
+  }
+
+  .vals5-theme .memory-carousel {
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  .vals5-theme .memory-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .vals5-theme .reasons-grid {
+    gap: 30px;
+  }
+
+  .vals5-theme .reason-item {
+    padding: 20px 0;
+  }
+
+  .vals5-theme .reason-item p {
+    font-size: 1rem;
+  }
+
+  .vals5-theme .love-meter-bar {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vals5-theme .valentine-header {
+    padding: 50px 20px 40px;
+  }
+
+  .vals5-theme .valentine-header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  .vals5-theme .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .vals5-theme h2 {
+    font-size: 1.5rem;
+  }
+
+  .vals5-theme .section-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .vals5-theme .hero-section {
+    height: 280px;
+  }
+
+  .vals5-theme .message-section,
+  .vals5-theme .memory-section,
+  .vals5-theme .reasons-section,
+  .vals5-theme .love-meter-section,
+  .vals5-theme .closing-section {
+    padding: 40px 15px;
+  }
+
+  .vals5-theme .message-text {
+    font-size: 1rem;
+  }
+
+  .vals5-theme .memory-carousel {
+    padding: 30px 15px;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .vals5-theme .memory-content {
+    min-height: 150px;
+  }
+
+  .vals5-theme .memory-item-active h3 {
+    font-size: 1.4rem;
+  }
+
+  .vals5-theme .memory-nav {
+    width: 35px;
+    height: 35px;
+  }
+
+  .vals5-theme .reasons-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .vals5-theme .reason-item {
+    padding: 15px 0;
+  }
+
+  .vals5-theme .reason-item p {
+    font-size: 0.95rem;
+  }
+
+  .vals5-theme .love-meter-bar {
+    max-width: 100%;
+  }
+
+  .vals5-theme .closing-section .section-container p {
+    font-size: 1rem;
+  }
+
+  .vals5-theme .valentine-footer {
+    padding: 40px 20px;
+  }
+
+  .vals5-theme .valentine-footer p {
+    font-size: 0.9rem;
+  }
+}

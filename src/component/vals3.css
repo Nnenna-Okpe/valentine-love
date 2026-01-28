@@ -1,0 +1,84 @@
+.vals3-theme {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.vals3-theme .font-cursive {
+  font-family: "Dancing Script", cursive;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.vals3-theme .heart-particle {
+  position: fixed;
+  bottom: -100px;
+  pointer-events: none;
+  z-index: 0;
+  animation: float linear infinite;
+  color: #fb7185;
+}
+
+.vals3-theme .glass {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.vals3-theme .reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vals3-theme .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vals3-theme .animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+/* Scoped scrollbar */
+.vals3-theme ::-webkit-scrollbar {
+  width: 10px;
+}
+.vals3-theme ::-webkit-scrollbar-track {
+  background: #fff1f2;
+}
+.vals3-theme ::-webkit-scrollbar-thumb {
+  background: #f43f5e;
+  border-radius: 10px;
+  border: 2px solid #fff1f2;
+}
+.vals3-theme ::-webkit-scrollbar-thumb:hover {
+  background: #e11d48;
+}

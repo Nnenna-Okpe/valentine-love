@@ -1,0 +1,82 @@
+/* .hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 6s infinite linear;
+}
+
+.heart:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+.heart:nth-child(2) {
+  left: 20%;
+  animation-delay: 1s;
+}
+.heart:nth-child(3) {
+  left: 30%;
+  animation-delay: 2s;
+}
+.heart:nth-child(4) {
+  left: 40%;
+  animation-delay: 3s;
+}
+.heart:nth-child(5) {
+  left: 50%;
+  animation-delay: 4s;
+}
+.heart:nth-child(6) {
+  left: 60%;
+  animation-delay: 5s;
+}
+.heart:nth-child(7) {
+  left: 70%;
+  animation-delay: 6s;
+}
+.heart:nth-child(8) {
+  left: 80%;
+  animation-delay: 7s;
+}
+.heart:nth-child(9) {
+  left: 90%;
+  animation-delay: 8s;
+}
+.heart:nth-child(10) {
+  left: 100%;
+  animation-delay: 9s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */

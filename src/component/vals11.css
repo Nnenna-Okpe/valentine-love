@@ -1,0 +1,47 @@
+.vals11-theme {
+  --deep-bg: #1a0d0d;
+  --accent-red: #ff1a1a;
+  --gold: #d4af37;
+  background-color: var(--deep-bg);
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.vals11-theme .font-luxury {
+  font-family: "Playfair Display", serif;
+}
+
+.vals11-theme .font-script {
+  font-family: "Great Vibes", cursive;
+}
+
+.vals11-theme .heart-frame-mask {
+  clip-path: url(#heart-mask);
+}
+
+.vals11-theme .text-glow-red {
+  text-shadow: 0 0 20px rgba(255, 26, 26, 0.4);
+}
+
+@keyframes pulse-gold {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+  }
+}
+
+.vals11-theme .gold-glow {
+  animation: pulse-gold 4s infinite ease-in-out;
+}
+
+.vals11-theme ::-webkit-scrollbar {
+  display: none;
+}
+
+.vals11-theme * {
+  scrollbar-width: none;
+}
