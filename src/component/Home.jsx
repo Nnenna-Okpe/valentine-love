@@ -16,7 +16,7 @@ export default function Home() {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] flex items-center justify-center md:p-4">
+      <div className="min-h-screen bg-linear-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] flex items-center justify-center md:p-4">
         <div className="relative w-screen md:max-w-7xl">
           {/* Main Container */}
           <div className="relative bg-[#0b0b16]/90 backdrop-blur-xl md:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
@@ -85,25 +85,33 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                   <div className="flex gap-4">
                     <a
-                      href=""
+                      href="https://www.instagram.com/nenztech?igsh=MTN3eHlvaWFkNHJ1eg=="
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="border border-white/20 text-white p-2 rounded-full hover:bg-white hover:text-black transition"
                     >
                       <Instagram size={16} />
                     </a>
                     <a
                       href="https://github.com/Nnenna-Okpe"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="border border-white/20 text-white p-2 rounded-full hover:bg-white hover:text-black transition"
                     >
                       <Github size={16} />
                     </a>
                     <a
                       href="https://wa.me/2349121361644"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="border border-white/20 text-white p-2 rounded-full hover:bg-white hover:text-black transition"
                     >
                       <MessageCircle size={16} />
                     </a>
                     <a
                       href="https://www.linkedin.com/in/okpe-nnenna-1b1213260/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="border border-white/20 text-white p-2 rounded-full hover:bg-white hover:text-black transition"
                     >
                       <Linkedin size={16} />
@@ -150,7 +158,7 @@ export default function Home() {
                   </svg>
 
                   {/* Glow Background */}
-                  <div className="absolute inset-6 bg-gradient-to-br from-pink-500/30 to-purple-500/30 rounded-full blur-2xl" />
+                  <div className="absolute inset-6 bg-linear-to-br from-pink-500/30 to-purple-500/30 rounded-full blur-2xl" />
 
                   {/* Inner Message */}
                   <div className="absolute inset-0 flex items-center justify-center px-8 text-center">
@@ -172,7 +180,7 @@ export default function Home() {
 
               <div className="flex items-center gap-4">
                 <span className="text-white font-semibold">3</span>
-                <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full" />
+                <div className="w-24 h-1 bg-linear-to-r from-pink-500 to-purple-500 rounded-full" />
                 <span className="text-pink-400 font-semibold">
                   Price Categories
                 </span>
@@ -203,24 +211,12 @@ const PRICE_TIERS = [
         title: "Soft Bloom",
         image: "https://picsum.photos/seed/love1/400/300",
       },
-      {
-        id: 2,
-        title: "Blush Note",
-        image: "https://picsum.photos/seed/love2/400/300",
-      },
+
       {
         id: 3,
         title: "Gentle Flame",
         image: "https://picsum.photos/seed/love3/400/300",
       },
-    ],
-  },
-  {
-    id: "premium",
-    label: "Premium Passion",
-    price: "₦10,000",
-    description: "Interactive, animated designs with deeper emotion.",
-    templates: [
       {
         id: 4,
         title: "Velvet Hearts",
@@ -236,10 +232,29 @@ const PRICE_TIERS = [
         title: "Golden Whisper",
         image: "https://picsum.photos/seed/love6/400/300",
       },
+    ],
+  },
+  {
+    id: "premium",
+    label: "Premium Passion",
+    price: "₦10,000",
+    description: "Interactive, animated designs with deeper emotion.",
+    templates: [
+      {
+        id: 2,
+        title: "Blush Note",
+        image: "https://picsum.photos/seed/love2/400/300",
+      },
+
       {
         id: 7,
         title: "Midnight Roses",
         image: "https://picsum.photos/seed/love7/400/300",
+      },
+      {
+        id: 8,
+        title: "Eternal Flame",
+        image: "https://picsum.photos/seed/love8/400/300",
       },
     ],
   },
@@ -249,11 +264,6 @@ const PRICE_TIERS = [
     price: "₦15,000",
     description: "Cinematic, fully immersive love experiences.",
     templates: [
-      {
-        id: 8,
-        title: "Eternal Flame",
-        image: "https://picsum.photos/seed/love8/400/300",
-      },
       {
         id: 9,
         title: "Royal Vows",
@@ -268,6 +278,11 @@ const PRICE_TIERS = [
         id: 11,
         title: "Forever & Always",
         image: "https://picsum.photos/seed/love11/400/300",
+      },
+      {
+        id: 12,
+        title: "Fun Love",
+        image: "https://picsum.photos/seed/love12/400/300",
       },
     ],
   },
@@ -317,7 +332,7 @@ function PricingPage() {
             >
               <div className="flex items-center gap-3 mb-4">
                 <Heart size={20} className="text-pink-400" />
-                <h2 className="text-xl sm:text-2xl !text-white font-semibold">
+                <h2 className="text-xl sm:text-2xl text-white! font-semibold">
                   {tier.label}
                 </h2>
               </div>
@@ -365,7 +380,7 @@ function PricingPage() {
                       alt={template.title}
                       className="w-full h-48 sm:h-52 md:h-56 object-cover group-hover:scale-105 transition-transform"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
                       <p className="font-semibold text-white text-sm sm:text-base">
                         {template.title}

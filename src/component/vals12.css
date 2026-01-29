@@ -1,0 +1,50 @@
+.vals12-theme {
+  --paper-white: #f3f4f6;
+  --heart-pink: #ff4d6d;
+  --heart-red: #c9184a;
+  --heart-dark: #800f2f;
+
+  background-color: var(--paper-white);
+  font-family: "Quicksand", sans-serif;
+  color: var(--heart-dark);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.vals12-theme .font-romantic {
+  font-family: "Dancing Script", cursive;
+}
+
+.vals12-theme .font-heading {
+  font-family: "Montserrat", sans-serif;
+}
+
+.vals12-theme .paper-heart {
+  filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.vals12-theme .paper-heart:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+/* Paper-cut layering effect */
+.vals12-theme .paper-layer {
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollbar scoped to vals12-theme only */
+.vals12-theme::-webkit-scrollbar {
+  width: 8px;
+}
+
+.vals12-theme::-webkit-scrollbar-track {
+  background: var(--paper-white);
+}
+
+.vals12-theme::-webkit-scrollbar-thumb {
+  background: var(--heart-pink);
+  border-radius: 10px;
+}

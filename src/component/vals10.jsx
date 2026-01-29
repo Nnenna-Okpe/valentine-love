@@ -91,7 +91,7 @@ const PaperBackground = () => (
 
 const PippinGuide = ({ text, isVisible, toggleVisible, hideMessage }) => (
   <motion.div
-    className="fixed bottom-10  md:left-12 md:right-auto md:max-w-md z-50 flex flex-col md:flex-row items-center md:items-end gap-4 pointer-events-none"
+    className="fixed bottom-2 md:bottom-10 left-0 md:left-12 md:right-auto md:max-w-md z-50 flex flex-col md:flex-row items-center md:items-end gap-4 pointer-events-none"
     initial={{ y: 100, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     onClick={toggleVisible}
@@ -317,7 +317,7 @@ export default function Vals10() {
                     animate={{ scale: 1, opacity: 1 }}
                     className="space-y-6"
                   >
-                    <div className="p-10 bg-white border-4 border-double border-rose-200 rounded-xl shadow-2xl font-handwritten text-3xl text-rose-900 leading-relaxed text-left relative">
+                    <div className="p-10 bg-white border-4 border-double border-rose-200 rounded-xl shadow-2xl font-handwritten text-xl md:text-3xl text-rose-900 leading-relaxed text-left relative">
                       <div className="absolute top-2 right-4 text-rose-200 opacity-40">
                         <Heart fill="currentColor" size={32} />
                       </div>
