@@ -12,6 +12,7 @@ import Vals8 from "./component/vals8.jsx";
 import Vals9 from "./component/vals9.jsx";
 import Vals10 from "./component/vals10.jsx";
 import Vals11 from "./component/vals11.jsx";
+import Footer from "./component/footer.jsx";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/vals11" element={<Vals11 />} />
         </Routes>
       </Router>
+      <Footer />
     </div>
   );
 }

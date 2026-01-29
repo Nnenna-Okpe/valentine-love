@@ -2,11 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Heart,
-  Wind,
-  PenTool,
   Scissors,
   ArrowRight,
-  Loader2,
   Flower,
   Sparkles,
   BookOpen,
@@ -94,7 +91,7 @@ const PaperBackground = () => (
 
 const PippinGuide = ({ text, isVisible, toggleVisible, hideMessage }) => (
   <motion.div
-    className="fixed bottom-10 left-6 right-6 md:left-12 md:right-auto md:max-w-md z-50 flex flex-col md:flex-row items-center md:items-end gap-4 pointer-events-none"
+    className="fixed bottom-10  md:left-12 md:right-auto md:max-w-md z-50 flex flex-col md:flex-row items-center md:items-end gap-4 pointer-events-none"
     initial={{ y: 100, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     onClick={toggleVisible}

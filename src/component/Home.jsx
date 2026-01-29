@@ -5,8 +5,9 @@ import {
   Search,
   ChevronRight,
   Instagram,
-  Facebook,
-  Twitter,
+  MessageCircle,
+  Linkedin,
+  Github,
   Globe,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -46,16 +47,24 @@ export default function Home() {
                 </p>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-wrap flex-row items-center gap-1 md:gap-4">
-                  <button className="bg-pink-500 text-white px-3 md:px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-pink-600 transition shadow-lg shadow-pink-500/20">
-                    Browse Templated
-                    <ChevronRight size={18} />
-                  </button>
 
-                  <button className="border border-white/20 text-white px-3 md:px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition flex items-center gap-2">
-                    View Portfolio
-                    <Globe size={18} />
-                  </button>
+                <div className="flex flex-row items-center gap-1 md:gap-4">
+                  <a href="#pricing">
+                    <button className="bg-pink-500 text-white px-3 md:px-8 py-4 rounded-full font-semibold flex items-center hover:bg-pink-600 transition shadow-lg shadow-pink-500/20">
+                      Browse Templates
+                      <ChevronRight size={18} />
+                    </button>
+                  </a>
+                  <a
+                    href="https://portfolio-svgr.onrender.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="border border-white/20 text-white px-3 md:px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition flex items-center gap-2">
+                      View Portfolio
+                      <Globe size={18} />
+                    </button>
+                  </a>
                 </div>
 
                 {/* Description */}
@@ -76,22 +85,28 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                   <div className="flex gap-4">
                     <a
-                      href="#"
+                      href=""
                       className="border border-white/20 text-white p-2 rounded-full hover:bg-white hover:text-black transition"
                     >
                       <Instagram size={16} />
                     </a>
                     <a
-                      href="#"
+                      href="https://github.com/Nnenna-Okpe"
                       className="border border-white/20 text-white p-2 rounded-full hover:bg-white hover:text-black transition"
                     >
-                      <Facebook size={16} />
+                      <Github size={16} />
                     </a>
                     <a
-                      href="#"
+                      href="https://wa.me/2349121361644"
                       className="border border-white/20 text-white p-2 rounded-full hover:bg-white hover:text-black transition"
                     >
-                      <Twitter size={16} />
+                      <MessageCircle size={16} />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/okpe-nnenna-1b1213260/"
+                      className="border border-white/20 text-white p-2 rounded-full hover:bg-white hover:text-black transition"
+                    >
+                      <Linkedin size={16} />
                     </a>
                   </div>
 
@@ -256,6 +271,12 @@ const PRICE_TIERS = [
       },
     ],
   },
+  {
+    id: "custom",
+    label: "Custom Love",
+    price: "Contact for Pricing",
+    description: "Tailored web experiences crafted just for you.",
+  },
 ];
 
 function PricingPage() {
@@ -263,7 +284,10 @@ function PricingPage() {
   const [activeTier, setActiveTier] = useState(null);
 
   return (
-    <div className="min-h-screen bg-[#0f0f14] text-white px-4 py-16">
+    <div
+      id="pricing"
+      className="min-h-screen bg-[#0f0f14] text-white px-4 py-16"
+    >
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header */}
         <div className="text-center space-y-4 px-2">
@@ -277,13 +301,14 @@ function PricingPage() {
         </div>
 
         {/* Price Tier Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {PRICE_TIERS.map((tier) => (
             <button
               key={tier.id}
-              onClick={() =>
-                setActiveTier(activeTier === tier.id ? null : tier.id)
-              }
+              onClick={() => {
+                if (tier.id === "custom") return;
+                setActiveTier(activeTier === tier.id ? null : tier.id);
+              }}
               className={`relative rounded-2xl border p-6 sm:p-8 text-left transition-all ${
                 activeTier === tier.id
                   ? "border-pink-500 bg-pink-500/10"
@@ -303,7 +328,7 @@ function PricingPage() {
                 {tier.description}
               </p>
 
-              <div className="absolute bottom-4 right-4 flex items-center gap-1 text-pink-400 text-xs font-semibold tracking-wide">
+              <div className="absolute bottom-4 right-4 flex items-center gap-1 mt-2 text-pink-400 text-xs font-semibold tracking-wide">
                 View Templates <ChevronRight size={14} />
               </div>
             </button>
