@@ -1,0 +1,60 @@
+.vals1-theme {
+  --primary-pink: #ff2d75;
+  --deep-red: #8b0000;
+  --cream: #fffdfa;
+  --gold-tint: #d4af37;
+
+  background-color: var(--cream);
+  font-family: "Montserrat", sans-serif;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+/* Typography */
+.vals1-theme .font-luxury {
+  font-family: "Playfair Display", serif;
+}
+
+.vals1-theme .font-script {
+  font-family: "Great Vibes", cursive;
+}
+
+/* Backgrounds */
+.vals1-theme .bg-gradient-valentine {
+  background: linear-gradient(135deg, #ff2d75 0%, #ff0a54 100%);
+}
+
+/* Borders */
+.vals1-theme .editorial-border {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Decorative curve */
+.vals1-theme .curve-bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50vw;
+  height: 100%;
+  background: var(--primary-pink);
+  clip-path: ellipse(100% 100% at 100% 50%);
+  z-index: 0;
+}
+
+/* Selection styling (scoped) */
+.vals1-theme ::selection {
+  background: var(--primary-pink);
+  color: white;
+}
+
+/* Scrollbar styling (scoped to this page only) */
+.vals1-theme::-webkit-scrollbar {
+  width: 4px;
+}
+.vals1-theme::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+.vals1-theme::-webkit-scrollbar-thumb {
+  background: var(--primary-pink);
+  border-radius: 10px;
+}

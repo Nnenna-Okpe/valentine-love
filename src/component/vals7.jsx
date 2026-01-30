@@ -113,6 +113,7 @@ export default function ValentinesSite() {
                   <img
                     src="https://picsum.photos/seed/love9/400/300"
                     alt="image"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="p-6">

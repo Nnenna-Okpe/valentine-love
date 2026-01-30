@@ -1,4 +1,6 @@
 import "./App.css";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./component/Home.jsx";
 import Vals from "./component/vals.jsx";
@@ -14,6 +16,16 @@ import Vals10 from "./component/vals10.jsx";
 import Vals11 from "./component/vals11.jsx";
 import Vals12 from "./component/vals12.jsx";
 import Footer from "./component/footer.jsx";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   return (
@@ -31,6 +43,7 @@ function App() {
       {/* <Vals11 /> */}
 
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/vals1" element={<Vals />} />
