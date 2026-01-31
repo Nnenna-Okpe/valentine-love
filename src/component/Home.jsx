@@ -28,10 +28,6 @@ export default function Home() {
                   Nenztech
                 </span>
               </div>
-
-              <button className="bg-pink-500/10 text-pink-400 p-3 rounded-full hover:bg-pink-500/20 transition">
-                <Search size={18} />
-              </button>
             </header>
 
             {/* Hero Section */}
@@ -283,6 +279,21 @@ const PRICE_TIERS = [
         id: 12,
         title: "Fun Love",
         image: "https://picsum.photos/seed/love12/400/300",
+      },
+      {
+        id: 13,
+        title: "Fun Love",
+        image: "https://picsum.photos/seed/love13/400/300",
+      },
+      {
+        id: 14,
+        title: "Fun Love",
+        image: "https://picsum.photos/seed/love14/400/300",
+      },
+      {
+        id: 15,
+        title: "Fun Love",
+        image: "https://picsum.photos/seed/love15/400/300",
       },
     ],
   },

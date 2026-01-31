@@ -1,0 +1,52 @@
+.vals13 {
+  --vals13-bg: #fff1f5;
+  --vals13-pink: #fb7185;
+  --vals13-rose: #f43f5e;
+  --vals13-text: #881337;
+  --vals13-accent: #fecdd3;
+}
+
+/* Page wrapper */
+.vals13 {
+  font-family: "Quicksand", sans-serif;
+  overflow: hidden;
+  background: var(--vals13-bg);
+  color: var(--vals13-text);
+}
+
+/* Romantic script font */
+.vals13 .font-romance {
+  font-family: "Dancing Script", cursive;
+  color: var(--vals13-rose);
+}
+
+/* Floating animation */
+@keyframes vals13-float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.vals13 .floating {
+  animation: vals13-float 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar (scoped) */
+.vals13 ::-webkit-scrollbar {
+  width: 6px;
+}
+
+.vals13 ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.vals13 ::-webkit-scrollbar-thumb {
+  background: var(--vals13-pink);
+  border-radius: 10px;
+}

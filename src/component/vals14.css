@@ -1,0 +1,64 @@
+.vals14 {
+  --vals14-bg: #2d0202; /* Deepest oxblood */
+  --vals14-velvet: #630d0d;
+  --vals14-gold: #d4af37;
+  --vals14-champagne: #f5e6be;
+}
+
+/* Page wrapper */
+.vals14 {
+  font-family: "Quicksand", sans-serif;
+  overflow: hidden;
+  background: var(--vals14-bg);
+  color: var(--vals14-champagne);
+}
+
+/* Elegant serif fonts */
+.vals14 .font-serif-elegant {
+  font-family: "Playfair Display", serif;
+}
+
+.vals14 .font-cinzel {
+  font-family: "Cinzel", serif;
+}
+
+/* Velvet luxury gradient */
+.vals14 .velvet-gradient {
+  background: radial-gradient(
+    circle at center,
+    var(--vals14-velvet) 0%,
+    var(--vals14-bg) 100%
+  );
+}
+
+/* Gold glow effect */
+.vals14 .gold-glow {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Gentle drifting animation */
+@keyframes vals14-drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(15px, -15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.vals14 .drifting {
+  animation: vals14-drift 6s ease-in-out infinite;
+}
+
+/* Custom scrollbar (scoped) */
+.vals14 ::-webkit-scrollbar {
+  width: 4px;
+}
+
+.vals14 ::-webkit-scrollbar-thumb {
+  background: var(--vals14-gold);
+  border-radius: 10px;
+}

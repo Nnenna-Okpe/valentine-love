@@ -194,7 +194,7 @@ export default function ValentinesDay() {
             >
               <div className="image-container h-96 md:h-[500px]">
                 <img
-                  src="https://images.unsplash.com/photo-1539571696357-5a69c006ae0f?w=600&h=600&fit=crop"
+                  src="https://picsum.photos/seed/love24/400/300"
                   alt="Loved one"
                 />
               </div>
