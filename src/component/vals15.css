@@ -1,0 +1,41 @@
+.vals15 {
+  --vals15-paper: #fdfaf0;
+  --vals15-ink: #1e293b;
+}
+
+/* Page wrapper */
+.vals15 {
+  font-family: "Montserrat", sans-serif;
+  background-color: #e5e7eb;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: var(--vals15-ink);
+}
+
+/* Paper texture surface */
+.vals15 .paper-texture {
+  background-color: var(--vals15-paper);
+  background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.05);
+}
+
+/* Handwritten font */
+.vals15 .font-hand {
+  font-family: "Gochi Hand", cursive;
+}
+
+/* Soft paper shadow */
+.vals15 .paper-shadow {
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.15));
+}
+
+/* Hide scrollbar (scoped) */
+.vals15 .hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.vals15 .hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

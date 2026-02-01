@@ -44,9 +44,9 @@ export default function Home() {
 
                 {/* CTA Buttons */}
 
-                <div className="flex flex-row items-center gap-1 md:gap-4">
+                <div className="flex flex-row items-center gap-2 md:gap-4">
                   <a href="#pricing">
-                    <button className="bg-pink-500 text-white px-3 md:px-8 py-4 rounded-full font-semibold flex items-center hover:bg-pink-600 transition shadow-lg shadow-pink-500/20">
+                    <button className="bg-pink-500 text-white px-2 py-3 md:px-8 md:py-4 rounded-full font-semibold flex items-center hover:bg-pink-600 transition shadow-lg shadow-pink-500/20">
                       Browse Templates
                       <ChevronRight size={18} />
                     </button>
@@ -56,7 +56,7 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <button className="border border-white/20 text-white px-3 md:px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition flex items-center gap-2">
+                    <button className="border border-white/20 text-white px-2 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:bg-white hover:text-black transition flex items-center gap-2">
                       View Portfolio
                       <Globe size={18} />
                     </button>
@@ -181,10 +181,6 @@ export default function Home() {
                   Price Categories
                 </span>
               </div>
-
-              <button className="text-white border border-white/20 px-6 py-2 rounded-full hover:bg-white hover:text-black transition">
-                View Templates →
-              </button>
             </div>
           </div>
         </div>
@@ -218,11 +214,11 @@ const PRICE_TIERS = [
         title: "Velvet Hearts",
         image: "https://picsum.photos/seed/love4/400/300",
       },
-      {
-        id: 5,
-        title: "Crimson Night",
-        image: "https://picsum.photos/seed/love5/400/300",
-      },
+      // {
+      //   id: 5,
+      //   title: "Crimson Night",
+      //   image: "https://picsum.photos/seed/love5/400/300",
+      // },
       {
         id: 6,
         title: "Golden Whisper",
@@ -334,6 +330,9 @@ function PricingPage() {
               onClick={() => {
                 if (tier.id === "custom") return;
                 setActiveTier(activeTier === tier.id ? null : tier.id);
+                document
+                  .getElementById("templates")
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
               className={`relative rounded-2xl border p-6 sm:p-8 text-left transition-all ${
                 activeTier === tier.id
@@ -363,7 +362,7 @@ function PricingPage() {
 
         {/* Templates Section */}
         {activeTier && (
-          <div className="space-y-10">
+          <div id="templates" className="space-y-10">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <h3 className="text-2xl sm:text-3xl font-semibold">
                 {PRICE_TIERS.find((t) => t.id === activeTier)?.label} Templates
