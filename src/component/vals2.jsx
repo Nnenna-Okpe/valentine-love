@@ -21,14 +21,14 @@ const MEMORIES = [
     title: "Midnight Drives",
     date: "Summer 2023",
     desc: "The city lights were our only audience as we talked until the sun claimed the horizon.",
-    img: "https://images.unsplash.com/photo-1444464666168-49d633b867ad?q=80&w=600&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=600&auto=format&fit=crop",
   },
   {
     id: 3,
     title: "The Silent Vow",
     date: "Winter 2024",
     desc: "In the quiet moments, I realized that home isn't a place, but the look in your eyes.",
-    img: "https://images.unsplash.com/photo-1516339901600-2e1a62d0ed3c?q=80&w=600&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=600&auto=format&fit=crop",
   },
 ];
 

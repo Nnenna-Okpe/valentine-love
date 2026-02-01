@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   Heart,
   Search,
@@ -10,7 +10,7 @@ import {
   Github,
   Globe,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -199,15 +199,19 @@ const PRICE_TIERS = [
     description: "Simple, beautiful templates for sweet messages.",
     templates: [
       {
-        id: 1,
-        title: "Soft Bloom",
-        image: "https://picsum.photos/seed/love1/400/300",
-      },
-
-      {
         id: 3,
         title: "Gentle Flame",
         image: "https://picsum.photos/seed/love3/400/300",
+      },
+      {
+        id: 6,
+        title: "Golden Whisper",
+        image: "https://picsum.photos/seed/love6/400/300",
+      },
+      {
+        id: 1,
+        title: "Soft Bloom",
+        image: "https://picsum.photos/seed/love1/400/300",
       },
       {
         id: 4,
@@ -219,11 +223,6 @@ const PRICE_TIERS = [
       //   title: "Crimson Night",
       //   image: "https://picsum.photos/seed/love5/400/300",
       // },
-      {
-        id: 6,
-        title: "Golden Whisper",
-        image: "https://picsum.photos/seed/love6/400/300",
-      },
     ],
   },
   {
@@ -253,7 +252,7 @@ const PRICE_TIERS = [
   {
     id: "luxury",
     label: "Luxury Forever",
-    price: "₦15,000",
+    price: "₦14,000",
     description: "Cinematic, fully immersive love experiences.",
     templates: [
       {
@@ -304,6 +303,24 @@ const PRICE_TIERS = [
 function PricingPage() {
   const navigate = useNavigate();
   const [activeTier, setActiveTier] = useState(null);
+  const templatesRef = useRef(null);
+
+  // ✅ ADDED: read tier from URL on load / back navigation
+  const [searchParams, setSearchParams] = useSearchParams();
+  const tierFromUrl = searchParams.get("tier");
+
+  // ✅ ADDED: restore tier from URL when component loads or URL changes
+  useEffect(() => {
+    if (tierFromUrl) {
+      setActiveTier(tierFromUrl);
+    }
+  }, [tierFromUrl]);
+
+  useEffect(() => {
+    if (activeTier && templatesRef.current) {
+      templatesRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [activeTier]);
 
   return (
     <div
@@ -329,10 +346,17 @@ function PricingPage() {
               key={tier.id}
               onClick={() => {
                 if (tier.id === "custom") return;
-                setActiveTier(activeTier === tier.id ? null : tier.id);
-                document
-                  .getElementById("templates")
-                  ?.scrollIntoView({ behavior: "smooth" });
+
+                const newTier = activeTier === tier.id ? null : tier.id;
+
+                setActiveTier(newTier);
+
+                // ✅ ADDED: sync tier to URL so back button restores state
+                if (newTier) {
+                  setSearchParams({ tier: newTier });
+                } else {
+                  setSearchParams({});
+                }
               }}
               className={`relative rounded-2xl border p-6 sm:p-8 text-left transition-all ${
                 activeTier === tier.id
@@ -362,7 +386,7 @@ function PricingPage() {
 
         {/* Templates Section */}
         {activeTier && (
-          <div id="templates" className="space-y-10">
+          <div id="templates" ref={templatesRef} className="space-y-10">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <h3 className="text-2xl sm:text-3xl font-semibold">
                 {PRICE_TIERS.find((t) => t.id === activeTier)?.label} Templates
@@ -370,6 +394,9 @@ function PricingPage() {
               <button
                 onClick={() => {
                   setActiveTier(null);
+
+                  // ✅ ADDED: clear tier from URL when closing templates
+                  setSearchParams({});
                 }}
                 className="text-sm text-white/60 hover:text-white underline"
               >

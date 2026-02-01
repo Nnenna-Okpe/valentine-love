@@ -27,7 +27,7 @@ const MEMORIES = [
     date: "December 2023",
     title: "Our First December",
     desc: "Wrapped in blankets, sipping hot cocoa while the world turned white outside. I realized then that I never want to be anywhere else.",
-    img: "https://images.unsplash.com/photo-1418489098011-2e4dcf019391?q=80&w=600&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=600&auto=format&fit=crop",
   },
 ];
 
@@ -145,9 +145,7 @@ const Navbar = () => {
           <a href="#memories" className="hover:text-rose-500 transition">
             Memories
           </a>
-          <a href="#poem" className="hover:text-rose-500 transition">
-            Poetry
-          </a>
+
           <a href="#reasons" className="hover:text-rose-500 transition">
             Why You?
           </a>
@@ -267,7 +265,7 @@ const ReasonsSection = () => (
 );
 
 const Footer = () => (
-  <footer className="bg-rose-600 py-4 text-center h-70 justify-center flex items-center text-white relative overflow-hidden w-full">
+  <footer className="bg-rose-600 py-4 text-center h-full justify-center flex items-center text-white relative overflow-hidden w-full">
     <div className="absolute inset-0 opacity-10 pointer-events-none my-6">
       <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
@@ -297,7 +295,7 @@ const Footer = () => (
 
 const Vals3 = () => {
   return (
-    <div className="vals3-theme relative flex flex-col justify-center items-center gap-12 min-h-screen bg-rose-50/30 selection:bg-rose-200 selection:text-rose-900">
+    <div className="vals3-theme relative min-h-screen bg-rose-50/30 selection:bg-rose-200 selection:text-rose-900">
       <FloatingHearts />
       <Navbar />
       <Hero />

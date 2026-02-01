@@ -3,9 +3,24 @@
 import React, { useState, useEffect } from "react";
 
 const memories = [
-  { id: 1, title: "Memory One", color: "from-rose-200 to-pink-200" },
-  { id: 2, title: "Memory Two", color: "from-pink-200 to-red-200" },
-  { id: 3, title: "Memory Three", color: "from-rose-100 to-pink-300" },
+  {
+    id: 1,
+    title: "Memory One",
+    image: "https://picsum.photos/seed/love61/400/200",
+    color: "from-rose-200 to-pink-200",
+  },
+  {
+    id: 2,
+    title: "Memory Two",
+    image: "https://picsum.photos/seed/love62/400/200",
+    color: "from-pink-200 to-red-200",
+  },
+  {
+    id: 3,
+    title: "Memory Three",
+    image: "https://picsum.photos/seed/love63/400/200",
+    color: "from-rose-100 to-pink-300",
+  },
 ];
 
 export default function Vals6() {
@@ -177,9 +192,7 @@ export default function Vals6() {
                 <div
                   className={`w-full h-32 bg-gradient-to-br ${memories[currentMemory].color} rounded-lg flex items-center justify-center transition-all duration-500`}
                 >
-                  <span className="text-white font-light text-xl">
-                    {memories[currentMemory].title}
-                  </span>
+                  <img src={memories[currentMemory].image} alt="" />
                 </div>
 
                 <div className="flex gap-3 items-center">
