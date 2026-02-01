@@ -10,6 +10,7 @@ import {
   Star,
   Loader2,
   RefreshCw,
+  X, // ✅ ADDED: for close button
 } from "lucide-react";
 import confetti from "canvas-confetti";
 
@@ -83,20 +84,25 @@ const FloatingHearts = () => {
   );
 };
 
+// ✅ UPDATED: CupidGuide now supports show/hide and close button
 const CupidGuide = ({ line }) => {
+  const [showMessage, setShowMessage] = useState(true); // ✅ controls only the message bubble
+
   return (
     <motion.div
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       className="fixed bottom-10 left-10 z-50 flex items-end space-x-4 max-w-sm md:max-w-md"
     >
+      {/* Guide Avatar — always visible */}
       <motion.div
+        onClick={() => setShowMessage((prev) => !prev)} // ✅ toggle message on click
         animate={{
           y: [0, -10, 0],
           rotate: [0, 5, -5, 0],
         }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="w-24 h-24 md:w-32 md:h-32 bg-white rounded-full shadow-xl flex items-center justify-center border-4 border-pink-100 overflow-hidden relative"
+        className="w-24 h-24 md:w-32 md:h-32 bg-white rounded-full shadow-xl flex items-center justify-center border-4 border-pink-100 overflow-hidden relative cursor-pointer"
       >
         <img
           src="https://picsum.photos/seed/cupid/200"
@@ -106,16 +112,30 @@ const CupidGuide = ({ line }) => {
         <div className="absolute inset-0 bg-pink-500/10 mix-blend-multiply" />
       </motion.div>
 
-      <motion.div
-        key={line}
-        initial={{ scale: 0.8, opacity: 0, y: 20 }}
-        animate={{ scale: 1, opacity: 1, y: 0 }}
-        className="bg-white p-4 rounded-2xl shadow-lg border-2 border-pink-50 relative before:content-[''] before:absolute before:bottom-4 before:-left-3 before:w-6 before:h-6 before:bg-white before:rotate-45 before:border-l-2 before:border-b-2 before:border-pink-50"
-      >
-        <p className="text-pink-700 text-sm md:text-base font-medium leading-relaxed">
-          {line}
-        </p>
-      </motion.div>
+      {/* Message Bubble — toggled only */}
+      <AnimatePresence>
+        {showMessage && (
+          <motion.div
+            key={line}
+            initial={{ scale: 0.8, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.8, opacity: 0, y: 20 }}
+            className="bg-white p-4 rounded-2xl shadow-lg border-2 border-pink-50 relative before:content-[''] before:absolute before:bottom-4 before:-left-3 before:w-6 before:h-6 before:bg-white before:rotate-45 before:border-l-2 before:border-b-2 before:border-pink-50"
+          >
+            {/* ❌ Close button */}
+            <button
+              onClick={() => setShowMessage(false)} // ✅ closes message only
+              className="absolute top-2 right-2 text-pink-400 hover:text-pink-600"
+            >
+              ✕
+            </button>
+
+            <p className="text-pink-700 text-sm md:text-base font-medium leading-relaxed pr-4">
+              {line}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
@@ -224,7 +244,7 @@ const StopContent = ({ stop, onNext }) => {
                 animate={{ opacity: 1 }}
                 className="text-center space-y-4"
               >
-                <div className="p-6 bg-pink-50 rounded-2xl border-2 border-dashed border-pink-200 font-cursive text-2xl text-pink-800 leading-relaxed">
+                <div className="p-6 bg-pink-50 rounded-2xl border-2 border-dashed border-pink-200 font-cursive text-lg md:text-2xl text-pink-800 leading-relaxed">
                   {localMessage}
                 </div>
                 <div className="flex space-x-2">
@@ -303,11 +323,13 @@ const StopContent = ({ stop, onNext }) => {
 
 export default function Vals9() {
   const [currentStep, setCurrentStep] = useState(0);
+  const [isGuideOpen, setIsGuideOpen] = useState(true); // ✅ ADDED: control guide visibility
   const currentStop = JOURNEY_STOPS[currentStep];
 
   const handleNext = () => {
     if (currentStep < JOURNEY_STOPS.length - 1) {
       setCurrentStep((prev) => prev + 1);
+      setIsGuideOpen(true); // ✅ ADDED: auto-show guide on new step
     }
   };
 
@@ -338,14 +360,14 @@ export default function Vals9() {
         <StopContent key={currentStep} stop={currentStop} onNext={handleNext} />
       </AnimatePresence>
 
-      <CupidGuide line={currentStop.characterLine} />
+      {/* ✅ UPDATED: CupidGuide now toggleable */}
+      <CupidGuide
+        line={currentStop.characterLine}
+        isOpen={isGuideOpen}
+        onToggle={() => setIsGuideOpen((prev) => !prev)}
+      />
 
       {/* Subtle Bottom Bar Icons */}
-      <div className="fixed bottom-6 right-10 flex space-x-6 text-pink-300">
-        <Music className="cursor-pointer hover:text-pink-500 transition-colors" />
-        <MessageCircle className="cursor-pointer hover:text-pink-500 transition-colors" />
-        <Heart className="cursor-pointer hover:text-pink-500 transition-colors" />
-      </div>
     </div>
   );
 }

@@ -59,8 +59,8 @@ const STOPS = [
 ];
 
 const GALLERY_IMAGES = [
-  "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1522673607200-164883e758ef?auto=format&fit=crop&q=80&w=800",
+  "https://picsum.photos/seed/love111/400/300",
+  "https://picsum.photos/seed/love112/400/300",
   "https://images.unsplash.com/photo-1464802686167-b939a6910659?auto=format&fit=crop&q=80&w=800",
   "https://images.unsplash.com/photo-1516733968668-dbdce39c46ef?auto=format&fit=crop&q=80&w=800",
 ];
@@ -187,31 +187,6 @@ export default function App() {
             VelvetLove
           </span>
         </div>
-        <div className="hidden lg:flex gap-10 text-[10px] font-black tracking-[0.3em] uppercase text-gray-500">
-          <span
-            className={`${step === 0 ? "text-red-600" : ""} transition-colors cursor-pointer`}
-          >
-            Story
-          </span>
-          <span
-            className={`${step === 1 ? "text-red-600" : ""} transition-colors cursor-pointer`}
-          >
-            Gallery
-          </span>
-          <span
-            className={`${step === 2 ? "text-red-600" : ""} transition-colors cursor-pointer`}
-          >
-            Vows
-          </span>
-          <span
-            className={`${step === 3 ? "text-red-600" : ""} transition-colors cursor-pointer`}
-          >
-            Eternal
-          </span>
-        </div>
-        <div className="w-10 h-10 bg-red-600/10 border border-red-600/30 rounded-full flex items-center justify-center text-red-600">
-          <Search size={18} />
-        </div>
       </nav>
 
       {/* Main Container - Adjusted sizing to prevent cutoff */}
@@ -248,8 +223,8 @@ export default function App() {
                       onClick={() => setSelectedVow(vow)}
                       className={`text-left px-4 py-3 rounded-xl border text-sm transition-all ${
                         selectedVow === vow
-                          ? "bg-red-600 border-red-600 text-white"
-                          : "bg-white/5 border-white/10 text-gray-400 hover:border-red-600/50"
+                          ? "bg-white/5 border-white/10 text-white hover:border-red-600/50"
+                          : "bg-white/5 border-white/10 text-white hover:border-red-600/50"
                       }`}
                     >
                       {vow}
@@ -282,21 +257,6 @@ export default function App() {
                 <ArrowRight size={20} className="text-white" />
               </div>
             </button>
-
-            <div className="flex gap-4 text-gray-500">
-              <Instagram
-                size={16}
-                className="hover:text-red-600 cursor-pointer transition-colors"
-              />
-              <Facebook
-                size={16}
-                className="hover:text-red-600 cursor-pointer transition-colors"
-              />
-              <Twitter
-                size={16}
-                className="hover:text-red-600 cursor-pointer transition-colors"
-              />
-            </div>
           </div>
         </motion.div>
 

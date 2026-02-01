@@ -247,6 +247,11 @@ const PRICE_TIERS = [
         title: "Eternal Flame",
         image: "https://picsum.photos/seed/love8/400/300",
       },
+      {
+        id: 9,
+        title: "Royal Vows",
+        image: "https://picsum.photos/seed/love9/400/300",
+      },
     ],
   },
   {
@@ -255,11 +260,6 @@ const PRICE_TIERS = [
     price: "₦14,000",
     description: "Cinematic, fully immersive love experiences.",
     templates: [
-      {
-        id: 9,
-        title: "Royal Vows",
-        image: "https://picsum.photos/seed/love9/400/300",
-      },
       {
         id: 10,
         title: "Hearts Entwined",
@@ -277,17 +277,17 @@ const PRICE_TIERS = [
       },
       {
         id: 13,
-        title: "Fun Love",
+        title: "Butterflies",
         image: "https://picsum.photos/seed/love13/400/300",
       },
       {
         id: 14,
-        title: "Fun Love",
+        title: "Coffe",
         image: "https://picsum.photos/seed/love14/400/300",
       },
       {
         id: 15,
-        title: "Fun Love",
+        title: "Dancing around the fire",
         image: "https://picsum.photos/seed/love15/400/300",
       },
     ],
@@ -345,14 +345,16 @@ function PricingPage() {
             <button
               key={tier.id}
               onClick={() => {
-                if (tier.id === "custom") return;
-
+                if (tier.id === "custom") {
+                  window.open("https://wa.me/2349121361644", "_blank"); // ✅ open WhatsApp link
+                  return;
+                }
                 const newTier = activeTier === tier.id ? null : tier.id;
 
                 setActiveTier(newTier);
 
                 // ✅ ADDED: sync tier to URL so back button restores state
-                if (newTier) {
+                https: if (newTier) {
                   setSearchParams({ tier: newTier });
                 } else {
                   setSearchParams({});
