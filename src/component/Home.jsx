@@ -65,11 +65,10 @@ export default function Home() {
 
                 {/* Description */}
                 <p className="text-white/90 text-sm md:text-base max-w-lg leading-relaxed">
-                  I’m a web developer at Nenztech, and I’ve created 11 premium
-                  Valentine web templates you can gift to your loved one. Each
-                  design is built to feel personal, immersive, and unforgettable
-                  — no apps, no downloads, just a beautiful experience in the
-                  browser.
+                  Here at Nenztech, we've created over 14 premium Valentine web
+                  templates you can gift to your loved one. Each design is built
+                  to feel personal, immersive, and unforgettable — no apps, no
+                  downloads, just a beautiful experience in the browser.
                 </p>
 
                 <p className="text-white/60 text-sm">
